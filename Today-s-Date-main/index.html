@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Today's Date</title>
+</head>
+<body>
+
+  <h2>Today's Date</h2>
+  <button onclick="showDate()">Show Date</button>
+  <p id="result"></p>
+
+  <script>
+    function showDate() {
+      var today = new Date();
+      document.getElementById("result").textContent = today.toDateString();
+    }
+  </script>
+
+</body>
+</html>
