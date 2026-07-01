@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { background: #0b0d11; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
+        
+        #click-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background: transparent;
+            border: 2px solid #ff4d6d;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #click-btn:hover { background: #ff4d6d; box-shadow: 0 0 20px #ff4d6d; }
+
+        /* The Rose Container (Hidden initially) */
+        #rose-container { display: none; position: relative; }
+
+        /* Simple CSS Rose Bloom Animation */
+        .flower { position: relative; width: 100px; height: 100px; animation: bloom 2s ease-in-out; }
+        .petal { position: absolute; background: #ff4d6d; width: 50px; height: 80px; border-radius: 50%; opacity: 0.8; transform-origin: bottom; }
+        
+        @keyframes bloom {
+            0% { transform: scale(0) rotate(0deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+
+        /* Notification */
+        #toast {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+    </style>
+</head>
+<body>
+
+    <button id="click-btn">Click Me</button>
+
+    <div id="rose-container">
+        <div class="flower">
+            <div class="petal" style="transform: rotate(0deg);"></div>
+            <div class="petal" style="transform: rotate(72deg);"></div>
+            <div class="petal" style="transform: rotate(144deg);"></div>
+            <div class="petal" style="transform: rotate(216deg);"></div>
+            <div class="petal" style="transform: rotate(288deg);"></div>
+        </div>
+    </div>
+
+    <div id="toast">Just for you...</div>
+
+    <script>
+        const btn = document.getElementById('click-btn');
+        const rose = document.getElementById('rose-container');
+        const toast = document.getElementById('toast');
+
+        btn.addEventListener('click', () => {
+            btn.style.display = 'none';
+            rose.style.display = 'block';
+            
+            // Show notification
+            toast.className = "show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+        });
+    </script>
+</body>
+</html>
+
