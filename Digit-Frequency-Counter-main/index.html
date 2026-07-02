@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit Frequency Counter</title>
+</head>
+<body>
+
+<h2>Digit Frequency Counter</h2>
+
+<script>
+
+let num = parseInt(prompt("Enter a number:"));
+let temp = num;
+let frequency = {};
+
+while (temp > 0) {
+
+    let digit = temp % 10;
+
+    if (frequency[digit]) {
+        frequency[digit]++;
+    } else {
+        frequency[digit] = 1;
+    }
+
+    temp = Math.floor(temp / 10);
+}
+
+document.write("Digit Frequency in " + num + "<br><br>");
+
+for (let key in frequency) {
+    document.write(key + " appears " + frequency[key] + " time(s)<br>");
+}
+
+</script>
+
+</body>
+</html>

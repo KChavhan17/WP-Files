@@ -1,0 +1,31 @@
+Body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.glow-btn {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #444;
+    background: #e0e0e0;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    /* Neumorphic Shadow */
+    box-shadow: 20px 20px 60px #bebebe, 
+               -20px -20px 60px #ffffff;
+    transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+    color: #6a11cb;
+    box-shadow: inset 4px 4px 10px #bebebe, 
+                inset -4px -4px 10px #ffffff;
+    text-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+}

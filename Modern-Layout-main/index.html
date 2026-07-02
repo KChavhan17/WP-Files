@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ronaldo 3 Image Layout</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+}
+
+.container{
+    display:grid;
+    grid-template-rows:50vh 50vh;
+    height:100vh;
+}
+
+.top{
+    overflow:hidden;
+}
+
+.bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Top Image -->
+    <div class="top">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg">
+    </div>
+
+    <!-- Bottom Images -->
+    <div class="bottom">
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg">
+        </div>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg">
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
